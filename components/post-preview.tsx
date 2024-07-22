@@ -36,7 +36,7 @@ export default function PostPreview({
         <div>
             <div className="mb-5">
                 {coverImage && (
-                    <CoverImage title={title} coverImage={coverImage} slug={slug} />
+                    <CoverImage title={title} coverImage={coverImage.node.sourceUrl} slug={slug} />
                 )}
             </div>
             <h3 className="text-3xl mb-3 leading-snug">

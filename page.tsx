@@ -34,7 +34,7 @@ const Page = async ({ params }: PageProps) => {
                 {heroPost && (
                     <HeroPost
                         title={heroPost.title}
-                        coverImage={heroPost.featuredImage}
+                        coverImage={heroPost.featuredImage.node}
                         dateString={heroPost.date} // Adjusted to match HeroPostProps
                         excerpt={heroPost.excerpt}
                         author={heroPost.author}

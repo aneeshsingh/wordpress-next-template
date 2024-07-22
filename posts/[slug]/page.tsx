@@ -22,6 +22,7 @@ export async function generateStaticParams() {
         slug: node.slug,
     }));
 }
+const DEFAULT_COVER_IMAGE_URL = 'https://dev.alkye.com/wp-content/uploads/2023/08/chris-lynch-Qruwi3Ur3Ak-unsplash-1.webp';
 
 export default async function PostPage({ params }: { params: Params }) {
     const { slug } = params;
@@ -44,7 +45,7 @@ export default async function PostPage({ params }: { params: Params }) {
                 <article>
                     <PostHeader
                         title={post?.title || ''}
-                        coverImage={post?.featuredImage?.node?.sourceUrl || ''}
+                        coverImage={post?.featuredImage.node.sourceUrl || DEFAULT_COVER_IMAGE_URL}
                         date={post?.date || ''}
                         author={post?.author || null}
                         categories={post?.categories || null}

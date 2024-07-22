@@ -7,11 +7,7 @@ import Categories from "@/app/components/categories";
 
 type PostHeaderProps = {
     title: string;
-    coverImage?: {
-        node?: {
-            sourceUrl?: string;
-        };
-    };
+    coverImage: string;
     date: string;
     author: {
         name: string;
@@ -31,7 +27,6 @@ type PostHeaderProps = {
 };
 
 const DEFAULT_AVATAR_URL = 'http://2.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=64&d=mm&r=g';
-const DEFAULT_COVER_IMAGE_URL = 'http://34.70.84.48:8000/wp-content/uploads/2024/07/free-photo-of-aerial-view-of-water-splashing-on-a-rocky-shore-1024x694.jpeg';
 
 export default function PostHeader({
                                        title,
@@ -40,7 +35,6 @@ export default function PostHeader({
                                        author,
                                        categories,
                                    }: PostHeaderProps) {
-    const coverImageUrl = coverImage?.node?.sourceUrl || DEFAULT_COVER_IMAGE_URL;
     const avatarUrl = author.avatar?.url || DEFAULT_AVATAR_URL;
 
     return (
@@ -50,7 +44,7 @@ export default function PostHeader({
                 <Avatar author={{ node: { ...author, avatar: { url: avatarUrl } } }} />
             </div>
             <div className="mb-8 md:mb-16 sm:mx-0">
-                <CoverImage title={title} coverImage={{ node: { sourceUrl: coverImageUrl } }} />
+                <CoverImage title={title} coverImage={coverImage} />
             </div>
             <div className="max-w-2xl mx-auto">
                 <div className="block md:hidden mb-6">

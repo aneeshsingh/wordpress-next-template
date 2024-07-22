@@ -24,7 +24,7 @@ interface HeroPostProps {
 }
 
 const DEFAULT_AVATAR_URL = 'http://2.gravatar.com/avatar/e64c7d89f26bd1972efa854d13d7dd61?s=64&d=mm&r=g';
-const DEFAULT_COVER_IMAGE_URL = 'http://34.70.84.48:8000/wp-content/uploads/2024/07/free-photo-of-aerial-view-of-water-splashing-on-a-rocky-shore-1024x694.jpeg';
+const DEFAULT_COVER_IMAGE_URL = 'https://dev.alkye.com/wp-content/uploads/2023/08/chris-lynch-Qruwi3Ur3Ak-unsplash-1.webp';
 
 export default function HeroPost({
                                      title,
@@ -41,7 +41,7 @@ export default function HeroPost({
         <section>
             <div className="mb-8 md:mb-16">
                 {coverImage && (
-                    <CoverImage title={title} coverImage={{ node: { sourceUrl: coverImageUrl } }} />
+                    <CoverImage title={title} coverImage={coverImageUrl} />
                 )}
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
