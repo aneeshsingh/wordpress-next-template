@@ -1,5 +1,5 @@
 // src/app/page.tsx
-import Head from "next/head";
+import { Metadata } from 'next'
 import Container from "@/app/components/container";
 import MoreStories from "@/app/components/more-stories";
 import HeroPost from "@/app/components/hero-post";
@@ -8,6 +8,9 @@ import Layout from "@/app/components/layoutcomponent";
 import { getAllPostsForHome } from "@/app/lib/api";
 import { CMS_NAME } from "@/app/lib/constants";
 import { AllPostsData, PostNode } from "@/app/lib/api"; // Adjust the import path as needed
+export const metadata: Metadata = {
+    title: `Next.js Blog Example with ${CMS_NAME}`,
+}
 
 // Define the props type
 type PageProps = {
@@ -26,9 +29,6 @@ const Page = async ({ params }: PageProps) => {
 
     return (
         <Layout preview={preview}>
-            <Head>
-                <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
-            </Head>
             <Container>
                 <Intro />
                 {heroPost && (
