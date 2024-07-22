@@ -1,7 +1,13 @@
+import React from "react";
 import Container from "@/app/components/container";
 import { EXAMPLE_PATH } from "@/app/lib/constants";
 
-export default function Alert({ preview }) {
+// Define the props type
+type AlertProps = {
+    preview: boolean;
+};
+
+export default function Alert({ preview }: AlertProps) {
     return (
         <div
             className={`border-b ${preview ? "bg-accent-7 border-accent-7 text-white" : "bg-accent-1 border-accent-2"}`}

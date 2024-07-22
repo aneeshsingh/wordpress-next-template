@@ -1,7 +1,11 @@
 import { fetchPostData } from "./fetchPostData";
 import { CMS_NAME } from "@/app/lib/constants";
 
-export default async function Head({ params }) {
+type HeadParams = {
+    slug: string;
+};
+
+export default async function Head({ params }: { params: HeadParams }) {
     const { slug } = params;
     const data = await fetchPostData(slug);
 
